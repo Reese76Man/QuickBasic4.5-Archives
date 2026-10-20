@@ -1,0 +1,239 @@
+                    .          Disk Edit v1.0          .
+                    .          ==============          .
+                    .     Written by: Corey Badeaux    .        
+                    .       Tronix Developers '96      .
+                    .                                  .
+                    ....................................
+
+
+FOREWORD:
+        When I first got a PC (The LEGENDARY C-64), I was facinated with
+computers and programming became my NEW hobby. I studied the C-64 like it
+was a book, and that is where I learned all the programming concepts that
+help me become the great programmer I am today. When I got my first IBM
+compatable, it was really easy to port over the skills I earned from
+my C-64.  But some things just were not there. For one, the C-64 had
+sprites, where the IBM, is more where you have to program your own
+sprite routines. Another thing is THIS: Disk Edit v1.0 .   On the old
+C-64 they had all kinds of Track/Sector Disk editors all over the place.
+And I tell you, you could edit a disk, and change sector pointers, directories
+, filenames, delete files, and just do all kind of things that could even
+help you protect your software.  Well now you can do the same for the IBM.
+Of course there are major differences such as FAT and Boot tables, but in
+time you can learn them.  As I am writing this, I still need to do a lot of
+reading on the BOOT SECTOR and other stuff. I have 2 tables below that
+may help you out a little.  Either way, it is utilities like this that need
+to be distributed, so that people have more control over their data storage
+devices. - DICEMAN / Corey Badeaux
+
+
+USAGE HELP:
+        Ok, the commands are simple and should be really easy to use and
+understand if you have fooled with a sector editor before.        
+Just use the appropriate keys to advance to the next track/sector, jump
+to a distand t/s, write over sectors, copy data from one sector/drive to
+another, and even a pretty good editor for the sectors you are in.
+
+Remember the following when viewing disk drives:
+        1.44 floppies have 80 tracks/ 18 sectors/ 2 heads (0,1)
+        720K floppies have 80 tracks/  9 sectors/ 2 heads (0,1)
+ Hard Drives can have different numbers of tracks/sectors and usually have
+ 16 heads. Maybe in future versions I will just auto-detect these stats.
+
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³                        D O S   B O O T   R E C O R D                         ³
+ÃÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³00h³3 bytes³  JMP to executable code. For DOS 2.x, 3 byte near jump (0E9h).   ³
+³   ³       ³  For DOS 3.x, 2 byte near jump (0EBh) followed by a NOP (90h)    ³
+ÃÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³03h³8 bytes³  optional OEM name and version  (such as IBM 2.1)                ³
+ÃÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³0Bh³2 bytes³  bytes per sector                                                ³
+ÃÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³0Dh³ byte  ³     ³  sectors per allocation unit (must be a power of 2)        ³
+ÃÄÄÄÅÄÄÄÄÄÄÄ´     ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³0Eh³2 bytes³  B  ³  reserved sectors (starting at logical sector 0)           ³
+³   ³       ³     ³  01 for 1.x-3.31, 02 for 4.0+                              ³
+ÃÄÄÄÅÄÄÄÄÄÄÄ´     ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³10h³ byte  ³     ³  number of FATs                                            ³
+ÃÄÄÄÅÄÄÄÄÄÄÄ´     ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³11h³2 bytes³     ³  maximum number of root directory entries                  ³
+ÃÄÄÄÅÄÄÄÄÄÄÄ´  P  ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³13h³2 bytes³     ³  number of sectors in logical image (total number of       ³
+³   ³       ³     ³  sectors in media, including boot sector directories, etc.)³
+³   ³       ³     ³  If logical disk size is geater than 32Mb, this value is 0 ³
+³   ³       ³     ³  and the actual size is reported at offset 26h (DOS 4.0+)  ³
+ÃÄÄÄÅÄÄÄÄÄÄÄ´     ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³15h³ byte  ³  B  ³  media descriptor byte                                     ³
+ÃÄÄÄÅÄÄÄÄÄÄÄ´     ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³16h³2 bytes³     ³  number of sectors occupied by a single FAT                ³
+ÃÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³18h³2 bytes³  sectors per track                                               ³
+ÃÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³1Ah³2 bytes³  number of heads                                                 ³
+ÃÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³1Ch³2 bytes³  # of hidden sectors  (sectors before this volume) (1st part)    ³
+ÀÄÄÄÁÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+            ³                EXTENDED BOOT RECORD (DOS 4.0+)                   ³
+ÚÄÄÄÂÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³1Eh³2 bytes³  # of hidden sectors  (sectors before this volume) (2nd part)    ³
+ÃÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³20h³4 bytes³  # sectors in this disk (see offset 13h, if 0)                   ³
+ÃÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³24h³2 bytes³  physical drive number (max 2 for DOS 4, max 8 for DOS 5)        ³
+ÃÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³26h³ byte  ³  extended boot record signature  (29h)                           ³
+ÃÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³27h³4 bytes³  volume serial number (assigned with a random function)          ³
+ÃÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³2Bh³11 byte³  volume label                                                    ³
+ÃÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³36h³7 bytes³  file system ID   (FAT12   ), (FAT16   ) etc.     ("reserved")   ³
+ÀÄÄÄÁÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+
+ÚÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+³offset ³  size   ³                  DISK DIRECTORY ENTRY
+ÃÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+³  00h  ³ 8 bytes ³ Filename
+³       ÃÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+³       ³ The first byte of the filename indicates the file status.
+³       ³ The file status byte may contain the following values:
+³       ÃÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+³       ³  00h ³ Directory entry has never been used. This is used to limit
+³       ³      ³ the length of directory searches, for performance reasons.
+³       ³  05h ³ Indicates that the first character of the filename actually
+³       ³      ³ has an 0EDh character.
+³       ³ 0E5h ³ Filename has been used but the file has been erased.
+³       ³  2Eh ³ This entry is for a directory. If the second byte is also
+³       ³      ³ 2Eh, the cluster field contains the cluster number of this
+³       ³      ³ directory's parent directory. (0000h if the parent directory
+³       ³      ³ is the root directory). Otherwise, bytes 00h-0Ah are all
+³       ³      ³ spaces and the cluster field contains the cluster number of
+³       ³      ³ the directory.
+³       ÃÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+³       ³ Any other character is the first character of a filename. Filenames
+³       ³ are left-aligned and if necessary padded with blanks.
+ÃÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+³  08h  ³ 3 bytes ³ Filename extension if any
+³       ÃÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+³       ³ Three characters, left-aligned and padded with blanks if necessary.
+³       ³ If there is no file extension, this field contains all blanks
+ÃÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+³  0Bh  ³ 1 byte  ³ File attributes
+³       ÃÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+³       ³          The attribute byte is mapped as follows:
+³       ÃÄÄÄÄÄÂÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+³       ³ hex ³bit³                    meaning
+³       ÃÄÄÄÄÄÅÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+³       ³ 00h ³   ³ (no bits set) normal; can be read or written without
+³       ³     ³   ³ restriction
+³       ³ 01h ³ 0 ³ file is marked read-only. An attempt to open the file for
+³       ³     ³   ³ output using int 21h/fn 3Dh will fail and an error code
+³       ³     ³   ³ will be returned. This value can be used with other values
+³       ³     ³   ³ below.
+³       ³ 02h ³ 1 ³ indicates a hidden file. The file is excluded from normal
+³       ³     ³   ³ directory searches.
+³       ³ 04h ³ 2 ³ indicates a system file. The file is excluded from normal
+³       ³     ³   ³ directory searches.
+³       ³ 08h ³ 3 ³ indicates that the entry contains the volume label in the
+³       ³     ³   ³ first 11 bytes. The entry has no other usable information
+³       ³     ³   ³ and may exist only in the root directory.
+³       ³ 10h ³ 4 ³ indicates that the file is a subdirectory
+³       ³ 20h ³ 5 ³ indicates an archive bit. This bit is set to on whenever
+³       ³     ³   ³ the file is written to and closed. Used by BACKUP and
+³       ³     ³   ³ RESTORE.
+³       ³     ³ 6 ³ reserved, set to 0
+³       ³     ³ 7 ³ reserved, set to 0
+³       ÃÄÄÄÄÄÁÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+³       ³ note 1) Bits 6 and 7 may be used in OS/2.
+³       ³ note 2) Attributes 08h and 10h cannot be changed using int21/43h.
+³       ³ note 3) The system files IBMBIO.COM and IBMDOS.COM (or customized
+³       ³         equivalent) are marked as read-only, hidden, and system
+³       ³         files. Files can be marked hidden when they are created.
+³       ³ note 4) Read-only, hidden, system and archive attributes may be
+³       ³         changed with int21h/fn43h.
+ÃÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+³  0Ch  ³ 10 bytes³ Reserved by DOS; value unknown
+ÃÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+³  16h  ³ 2 bytes ³ File timestamp
+³       ÃÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+³       ³ These bytes contain the time when the file was created or last
+³       ³  updated. The time is mapped in the bits as follows:
+³       ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³       ³         B Y T E   16h         ³         B Y T E   17h         ³
+³       ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³       ³ F   E   D   C   B   A   9   8 ³ 7   6   5   4   3   2   1   0 ³
+³       ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³       ³ H   H   H   H   H ³ M   M   M   M   M   M ³ D   D   D   D   D ³
+³       ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³       ³ binary # hrs 0-23 ³ binary # minutes 0-59 ³ bin. # 2-sec incr ³
+³       ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+³       ³ note: The time is stored with the least significant byte first.
+ÃÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+³  18h  ³ 2 bytes ³ File datestamp
+³       ÃÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+³       ³ This area contains the date when the file was created or last
+³       ³ updated. The mm/dd/yy are mapped in the bits as follows:
+³       ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³       ³         B Y T E   18h         ³         B Y T E   19h         ³
+³       ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³       ³ F   E   D   C   B   A   9   8 ³ 7   6   5   4   3   2   1   0 ³
+³       ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³       ³ Y   Y   Y   Y   Y   Y   Y ³ M   M   M   M ³ D   D   D   D   D ³
+³       ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³       ³     0-119 (1980-2099)     ³     1-12      ³       1-31        ³
+³       ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+³       ³ note: The date is stored with the least significant byte first.
+ÃÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+³  1Ah  ³ 2 bytes ³ First file cluster number
+³       ÃÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+³       ³ * (reserved in DOS 2, documented in DOS 3+)
+³       ³ This area contains the starting cluster number of the first cluster
+³       ³ in the file. The first cluster for data space on all fixed disks and
+³       ³ floppy disks is always cluster 002. The cluster number is stored
+³       ³ with the least significant byte first.
+ÃÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+³  1Ch  ³ 4 bytes ³ File size
+³       ÃÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+³       ³ This area contains the file size in bytes. The first word contains
+³       ³ the low order part of the size. Both words are stored with the least
+³       ³ significant byte first.
+ÀÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+
+
+        
+        
+                        ERROR CODE FOR Disk Edit v1.0       
+                        =============================
+
+                00h     successful completion, no errors
+                01h     bad command
+                02h     address mark not found
+                03h     tried to write on write-protected disk    (floppy only)
+                04h     sector not found
+                05h     reset failed                                (hard disk)
+                06h     diskette removed or changed               (floppy only)
+                07h     bad parameter table                         (hard disk)
+                08h     DMA overrun                               (floppy only)
+                09h     attempt to DMA across 64K boundary
+                0Ah     bad sector detected                         (hard disk)
+                0Bh     bad track detected                          (hard disk)
+                0Ch     unsupported track or media type not found (floppy disk)
+                0Dh     invalid number of sectors on format         (hard disk)
+                0Eh     control data address mark detected          (hard disk)
+                0Fh     DMA arbitration level out of range          (hard disk)
+                10h     uncorrectable CRC/EEC on read
+                11h     ECC corrected data error                    (hard disk)
+                20h     controller failure
+                40h     seek failed
+                80h     timeout
+                0AAh    drive not ready                             (hard disk)
+                0BBh    undefined error                             (hard disk)
+                0CCh    write fault                                 (hard disk)
+                0E0h    status error                                (hard disk)
+                0FFh    sense operation failed                      (hard disk)
+
