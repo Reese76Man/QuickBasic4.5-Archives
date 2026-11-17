@@ -8,6 +8,7 @@ I've compiled as many of the programs as I could into a windows binary executabl
 
 <pre>
   [BLACK JACK]        BlackJack.BAS/EXE - Blackjack!  Can you beat Cardshark Jack? This is a program I wrote during senior year of HS for Computer Science class.  It worked on their GW-Basic and QB45 was backwards compatible, so I added what amounted to an "About" screen and here it is! 
+  [COMBO MAKER]       Combo.BAS/EXE - My first attempt at a self-extracting EXE software installation packager.  It worked pretty well (and still does) for what it was for.  Uses Master.EXE as the base installer!
   [DISK UTILITIES]    DiskCopy.BAS - Disc copier, duh!  I made m own floppy disk to file/file to floppy disk imaging utility.  And yes, it's very generous of me to give away this hot item after all of these years!
                       DiskEditor.BAS - Like my grandfather said, "If you want a track and sector editor done right, do it yourself!".  To this day, I never leave home without my trusty hex editor!
                       DiskLocker.BAS - I think this was my attempt at encrypting a whole floppy disk.  I asked Google's Gemini Ai to analyze this and IT seemed impressed, so... yeah. ;)    Actually, it's analysis was spot on and neat to read.
