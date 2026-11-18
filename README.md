@@ -16,6 +16,7 @@ I've compiled as many of the programs as I could into a windows binary executabl
                       PF.BAS/EXE (Print Formatter) - A simple utility that replaced non-printable characters in a file and output a clean textfile.
                       QUICK.BAS/EXE (QuickProtect v2.0) - My attempt at down and dirty file encryption.  It may be crude, but works fine for a household of non-hacker snoops!
                       TCOPY.BAS/EXE - A simple, single file copy utility.  Of course DOS had the COPY command, but I wanted a progress bar and built-in copy verification!
+                      TVIEW.BAS/EXE (T-View v1.5) - A textfile viewer that allowed lateral and vertical scrolling!
   [GAMES]             BlackJack.BAS/EXE (Blackjack!) - Can you beat Cardshark Jack? This is a program I wrote during senior year of HS for Computer Science class.  It worked on their GW-Basic and QB45 was backwards compatible, so I added what amounted to an "About" screen and here it is! 
                       SF2093.BAS/EXE (Starfighter 2093) - Making a game in QB45 wasn't ideal, but cool visual demos and learning expeditions were all the rage for me.  It may be crap, but... no, it's crap.  Enjoy!
   [LOADCODE]          LCD.BAS/EXE (LoadCode v3.2) is a Binary File to Email-able Text Converter. File attachments are all the rage now, but back then, E-Mail wasn't so accommodating.  LCD_EXE.TXT is a converted version of LCD.EXE!
@@ -25,6 +26,7 @@ I've compiled as many of the programs as I could into a windows binary executabl
                       Pass.BAS/EXE - A simple test to see if I could store a password inside of the EXE and have it not be easily extracted via Hex editor (PW: REESEMANJACK)
                       TMATH.BAS/EXE - A utility that allowed me to perform simple math queries in my DOS prompt. A full on calculator GUI would have probably been the next step!
                       VirtualMemory.BAS - It basically opened a binary file, then I created peek/poke functions to use it as virtual memory.  It was a test demo just to see if it would work (and maybe had practical use later)
+  [TRONBASE]          TronBase.BAS/EXE - In 1997, my then-girlfriend worked at the mall for a place called HomeMart.  I wrote this to try and help them with inventory.  It was to run off of a floppy (uses HOMEMART.INV).
   [VIRTUAL TV]        TV.BAS/EXE - It's a virtual TV and in just 40 lines of code!  Yes, it uses an external datafile, but still.. fully functional in 2026!  Use +/- to "change" the channel. Use V and then +/- to "adjust" the volume.
   [WORDFINDERMAKER]   WORDFIND.BAS/EXE - Nowadays, you simply ask Ai to make you a fun 25x25 grid wordfind puzzle... but this one doesn't run in a datacenter nor use frivolous colors, as in... all of them.  There are no ads and your data will NOT be collected!
   [ZOOMBASE]          DATA.BAS/EXE - A fixed-length person database that I created.  It featured a crude alpha-sorter, compression, merge, and the usual add/update/delete abilities.
