@@ -15,5 +15,6 @@ I've compiled as many of the programs as I could into a windows binary executabl
   [MISC PROJECTS]     VirtualMemory.BAS - It basically opened a binary file, then I created peek/poke functions to use it as virtual memory.  It was a test demo just to see if it would work (and maybe had practical use later)
   [STARFIGHTER 2093]  SF2093.BAS/EXE - Making a game in QB45 wasn't ideal, but cool visual demos and learning expeditions were all the rage for me.  It may be crap, but... no, it's crap.  Enjoy!
   [VIRTUAL TV]        TV.BAS/EXE - It's a virtual TV and in just 40 lines of code!  Yes, it uses an external datafile, but still.. fully functional in 2026!  Use +/- to "change" the channel. Use V and then +/- to "adjust" the volume.
-  [WORDFINDERMAKER]   WORDFIND.BAS/EXE - Nowadays, you simply ask Ai to make you a fun 25x25 grid wordfind puzzle... but this one doesn't run in a datacenter nor use frivolous colors, as in... all of them.  There are no ads and your data will NOT be collected!  
+  [WORDFINDERMAKER]   WORDFIND.BAS/EXE - Nowadays, you simply ask Ai to make you a fun 25x25 grid wordfind puzzle... but this one doesn't run in a datacenter nor use frivolous colors, as in... all of them.  There are no ads and your data will NOT be collected!
+  [ZOOMBASE]          DATA.BAS/EXE - A fixed-length person database that I created.  It featured a crude alpha-sorter, compression, merge, and the usual add/update/delete abilities.
 </pre>
