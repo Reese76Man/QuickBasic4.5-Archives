@@ -15,6 +15,7 @@ I've compiled as many of the programs as I could into a windows binary executabl
   [FILE UTILITIES]    FFind.BAS/EXE - F-Find "Finds files quickly and find find text in files". What my crap description was trying to say is that this searches folders/subfolders for files with specific texts in them.
                       Most.BAS/EXE - This utility scans a file and reports back on the top 10 ASCII values (or characters) found in said file.  I was probably thinking about compression or something when I wrote this.
                       PF.BAS/EXE - Print Formatter - A simple utility that replaced non-printable characters in a file and output a clean textfile.
+                      QUICK.BAS/EXE - QuickProtect - My attempt at down and dirty file encryption.  It may be crude, but works fine for a household of non-hacker snoops!
   [LOADCODE]          LCD.BAS/EXE - LoadCode v3.2 is a Binary File to Email-able Text Converter. File attachments are all the rage now, but back then, E-Mail wasn't so accommodating.  LCD_EXE.TXT is a converted version of LCD.EXE!
                       LCM.BAS/EXE - LoadComb was used when multiple LoadCode files needed to be combined before decoding them back into a binary file, making it LoadCode's companion tool and confidant!
   [MISC PROJECTS]     DiceApp.BAS/EXE - A simple application for joining DICEnet, which spawned from The Flame Broiler BBS, which I ran.
