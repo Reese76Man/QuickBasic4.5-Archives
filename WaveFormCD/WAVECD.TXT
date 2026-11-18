@@ -1,0 +1,90 @@
+                             /-WAVEFORM CD v1.5/\
+                           /-----------------/ BY \
+                         /    TRONIX '96   /DICEMAN \
+                       /-----------------/------------\
+                       |  --    --   -- |(504)277-3950|
+                       | |++|  |++| |++||     --      |
+                       |  --    --   -- |    |  |     |
+                       |                |    | *|     |
+                       |________________|____|__|_____|
+
+Introduction:
+        Thank you for trying out WAVEFORM-CD v1.5, what I consider the
+        ultimate computer CD-PLAYER. Mouse driven and easy to use,
+        you can view 9 different oscilloscope waveforms and power meter
+        as you listen to your favorite CD's. Adjust CD & Sound Card Volumes.
+        WFCD v1.5 also comes with the option to save info on ALL the CD's
+        you own with it's built in, auto-detection feature. This allows
+        the computer to tell you what CD, Artist, and what Song is playing
+        at all times. Your CD collection is the only limit to it's capacity.
+        There is a limit of 160 Songs all at 14 characters a piece. Easily
+        adjust Frames Per Second for the oscilloscope for computers which may
+        be too fast. Auto Repeat/Shuffle/Programming for each CD. Who knows
+        what lies ahead in future versions...
+                        - Corey Badeaux "DICEMAN"
+
+More:
+        Even if you don't have a CD-Player, the Oscilloscope wave options
+        are still available for sound coming in thru either microphone or
+        line in. If you do not even have a sound card... the program
+        will tell you and display a demo-wave, just to demonstrate the
+        different waveforms.
+
+MAIN MENU
+---------
+Ok, the main menu consist of a lot of options. This is the screen that shows
+up immediately after WAVECD is run. First I will explain options
+which can be accessed via MOUSE or KEYBOARD. In the upper-left hand
+corner of the main menu screen you will see the WAVE CONTROL, this is
+where you choose which waveform to display. In the upper-right hand
+corner of the main menu screen you will see the CD Player Controls.
+You can Open the CD-Door if your CD-ROM has that option, Play, Stop,
+Pause, Advance/Retreat One Track, or Advance/Retreat 15 Seconds. Also
+some Sound Card controls (Sound Blaster Compatible) can be found, you can
+adjust the CD Volume, which controls the sound going from the CD-ROM
+to the sound card. This option controls how much sound will be going to the
+wave & power meter from the CD. The other option is to control the Sound
+Blaster Main Volume, this controls all sound coming out of the sound card
+which is then played thru your speakers. In the center of the Main Menu
+Screen you will see the wave-panel where 8 of the 9 waveforms will be
+displayed. (All except for the Full Screen Wave)
+In the lower-left hand corner of the menu screen you will notice the CD-Info
+Box. This will give you current info on the CD (and tell you what CD and song
+you are playing if it is programmed in). Also at the very bottom of
+the info box you will see some more options. The first five are for editing
+the Individual CD-Info stored on your Drive. Option (8) alone will
+be explained in the next section. The rest of the options consist of:
+J) Jump Track - Allows you to jump to any track on the CD without using +/-
+Y) FPS Adjust - Allows you to set the auto-Frames Per Second Adjuster.
+                The computer will try to keep the same Frames Per Second
+                on the waveform in case your computer is too fast.
+M) WaveCD.TXT - This options allows you to view this text file for help
+                while running waveform.
+R) Options - This is where you choose between REPEAT SONG, which repeats
+             whatever song is playing over and over. REPEAT CD, which
+             repeats the CD once it reaches the end. SHUFFLE, which will
+             choose a random song but not the same 2 in a row. And PROGRAM CD
+             which initiates the preset songs that you define in option (8),
+             which is explained a little later on in this help file.
+
+In the Right-Lower hand corner of the menu screen, you will see the power
+meter and next to that will be the volume settings for the CD & Sound Card.
+
+Option (8), CD-Detection Editor/Viewer
+--------------------------------------
+This is a full editor that will allow you to edit ALL CD's in your
+collection that have been pre-read by the software without actually
+having that particular CD in. You can also edit all of the tracks (up to
+160) with the (C) option.  If you would like to view your collection,
+just hit (V) and it will display the ALBUM and ARTIST and save it to
+a file named "CD.LST" in case you want to print it out. If you have
+a CD in already, the software will jump right to that CD to start editing.
+If there is no CD, it will start at the first one in your collection.
+Just scroll thru the CD-Collection using +/- and hit (S) to save info.
+Also in this screen, you can define your PROGRAM CD.
+
+I really hope you enjoyed this version of WaveFormCD. - Corey Badeaux
+
+Corey Badeaux
+2405 Pakenham Dr.
+Chalmette, La 70043
