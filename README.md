@@ -26,8 +26,10 @@ I've compiled as many of the programs as I could into a windows binary executabl
                       Pass.BAS/EXE - A simple test to see if I could store a password inside of the EXE and have it not be easily extracted via Hex editor (PW: REESEMANJACK)
                       TMATH.BAS/EXE - A utility that allowed me to perform simple math queries in my DOS prompt. A full on calculator GUI would have probably been the next step!
                       VirtualMemory.BAS - It basically opened a binary file, then I created peek/poke functions to use it as virtual memory.  It was a test demo just to see if it would work (and maybe had practical use later)
+  [SOUND]             [VARIOUS].BAS - Once I discovered how to communicate with my Sound Blaster card, I went wild trying to see what I could do with it.  These are the programs that resulted from that experimentation!
   [TRONBASE]          TronBase.BAS/EXE - In 1997, my then-girlfriend worked at the mall for a place called HomeMart.  I wrote this to try and help them with inventory.  It was to run off of a floppy (uses HOMEMART.INV).
   [VIRTUAL TV]        TV.BAS/EXE - It's a virtual TV and in just 40 lines of code!  Yes, it uses an external datafile, but still.. fully functional in 2026!  Use +/- to "change" the channel. Use V and then +/- to "adjust" the volume.
+  [WaveFormCD]        WaveCD.BAS - With a CD-ROM Kit for QB45, I was able to make a CD Player with some cool features.  CD Identification, Track Playlist, and soundwave oscilloscope!  It even had mouse support!
   [WORDFINDERMAKER]   WORDFIND.BAS/EXE - Nowadays, you simply ask Ai to make you a fun 25x25 grid wordfind puzzle... but this one doesn't run in a datacenter nor use frivolous colors, as in... all of them.  There are no ads and your data will NOT be collected!
   [ZOOMBASE]          DATA.BAS/EXE - A fixed-length person database that I created.  It featured a crude alpha-sorter, compression, merge, and the usual add/update/delete abilities.
 </pre>
