@@ -18,6 +18,7 @@ I've compiled as many of the programs as I could into a windows binary executabl
                       LCM.BAS/EXE - LoadComb was used when multiple LoadCode files needed to be combined before decoding them back into a binary file, making it LoadCode's companion tool and confidant!
   [MISC PROJECTS]     DiceApp.BAS/EXE - A simple application for joining DICEnet, which spawned from The Flame Broiler BBS, which I ran.
                       Money.BAS/EXE - This unfinished project was supposed to be a spreadsheet-like personal bill tracker for household usage.
+                      Pass.BAS/EXE - A simple test to see if I could store a password inside of the EXE and have it not be easily extracted via Hex editor (PW: REESEMANJACK)
                       VirtualMemory.BAS - It basically opened a binary file, then I created peek/poke functions to use it as virtual memory.  It was a test demo just to see if it would work (and maybe had practical use later)
                       
                       
