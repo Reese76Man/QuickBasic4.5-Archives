@@ -37,6 +37,8 @@ I've compiled as many of the programs as I could into a windows binary executabl
   [MOVIE MASTER]        Movie.BAS/EXE - How does one keep track of all of their physical media?  Computers!
   [PAPA JOHNS WORKLOG]  Papa.BAS/EXE - For Papa Johns delivery drivers, we got minimum wage, a commission %, and tips.  This kept track of trends and gave an honest Hourly wage for me and some friends to utilize.
   [SOUND]               [VARIOUS].BAS - Once I discovered how to communicate with my Sound Blaster card, I went wild trying to see what I could do with it.  These are the programs that resulted from that experimentation!
+  [SPEDIT]              SPEdit.BAS/EXE - One of my favorites, a fully functional Image editor. It was feature rich and very very useful for QB/VGA graphics. Check it out... this one may be my QB43 magnum opus!
+  [SPRITE]              Sprite.BAS/EXE - Sprite Editor for my VGA games!  I also included a host of random sprites made.  It can also edit the palette (although I tended to use the default for my sprites)
   [TRONBASE]            TronBase.BAS/EXE - In 1997, my then-girlfriend worked at the mall for a place called HomeMart.  I wrote this to try and help them with inventory.  It was to run off of a floppy (uses HOMEMART.INV).
   [VIRTUAL TV]          TV.BAS/EXE - It's a virtual TV and in just 40 lines of code!  Yes, it uses an external datafile, but still.. fully functional in 2026!  Use +/- to "change" the channel. Use V and then +/- to "adjust" the volume.
   [WaveFormCD]          WaveCD.BAS - With a CD-ROM Kit for QB45, I was able to make a CD Player with some cool features.  CD Identification, Track Playlist, and soundwave oscilloscope!  It even had mouse support!
