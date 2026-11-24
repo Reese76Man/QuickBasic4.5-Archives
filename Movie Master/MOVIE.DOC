@@ -1,0 +1,41 @@
+                        Movie Master v1.0
+                        -----------------
+
+Programming: Corey Badeaux
+
+Movie Master was designed to store numbered and non-numbered tapes with
+the movies on each tape. By numbering your video tape collection, you can
+search thru the Video Tape Database by number, words, or partial words
+found in the name of the movie. You can Add or Delete movies and if
+you have to edit the file, just use the ALPHA-SORTER to fix any problems
+with the text-based datafile and it will automatically sort up to
+5000+ movies quickly in alphabetical order.
+
+SEARCH MODE
+-----------
+Searh Movie Datafile by NUMBER, words, or partial words found in movie title.
+Or leave entry blank to view all titles.
+
+ADD MODE
+--------
+Add movie by entering number then title of movie. If you don't want a number
+just leave entry blank. Once the title is entered, it will sort thru the data
+file and place the new entry in it's alphabetical place in the file.
+
+DELETE MODE
+-----------
+Searches for movies same way as in SEARCH MODE, but gives you the option
+to delete the items found.
+
+EDIT MODE
+---------
+Used the DOS EDIT command to edit the movie datafile, just in case you
+have to.
+
+ALPHA-SORTER
+------------
+Run this anytime you think your movies have gotten out of place.
+
+Any questions, comments, Internet mail address is:TRONIX@CPORT.COM
+                                                  COREY@TCHQ.COM
+
