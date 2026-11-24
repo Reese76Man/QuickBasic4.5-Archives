@@ -24,7 +24,8 @@ I've compiled as many of the programs as I could into a windows binary executabl
                         SF2093.BAS/EXE (Starfighter 2093) - Making a game in QB45 wasn't ideal, but cool visual demos and learning expeditions were all the rage for me.  It may be crap, but... no, it's crap.  Enjoy!
   [GRAPHICS]            Action.BAS/EXE - A pseudo-vector-ish title demo for Tronix Developers.  Development exploration can be among the most fun a creative programmer can perform.
                         [GUY]/GUY.BAS/EXE - A demo of sorts where a guy does a couple of things on the screen.  It was a testbed for my bespoke sprite system.  Neat!
-                        TAD.BAS/EXE - Tronix VGA Intro that I made.  It would cycle through the palette and scroll some text.  A perfect demo/intro for whatever lie next!                        
+                        TAD.BAS/EXE - Tronix VGA Intro that I made.  It would cycle through the palette and scroll some text.  A perfect demo/intro for whatever lie next!
+                        VGA0XX.BAS/EXE - Various VGA Graphical Test and Demos.  Nothing fancy, just pure playing around with what QB could do and how fast it could do it!
   [LOADCODE]            LCD.BAS/EXE (LoadCode v3.2) is a Binary File to Email-able Text Converter. File attachments are all the rage now, but back then, E-Mail wasn't so accommodating.  LCD_EXE.TXT is a converted version of LCD.EXE!
                         LCM.BAS/EXE - LoadComb was used when multiple LoadCode files needed to be combined before decoding them back into a binary file, making it LoadCode's companion tool and confidant!
   [MISCELLANEOUS]       DiceApp.BAS/EXE - A simple application for joining DICEnet, which spawned from The Flame Broiler BBS, which I ran.
