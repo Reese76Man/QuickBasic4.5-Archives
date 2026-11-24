@@ -18,8 +18,11 @@ I've compiled as many of the programs as I could into a windows binary executabl
                         QUICK.BAS/EXE (QuickProtect v2.0) - My attempt at down and dirty file encryption.  It may be crude, but works fine for a household of non-hacker snoops!
                         TCOPY.BAS/EXE - A simple, single file copy utility.  Of course DOS had the COPY command, but I wanted a progress bar and built-in copy verification!
                         TVIEW.BAS/EXE (T-View v1.5) - A textfile viewer that allowed lateral and vertical scrolling!
-  [GAMES]               BlackJack.BAS/EXE (Blackjack!) - Can you beat Cardshark Jack? This is a program I wrote during senior year of HS for Computer Science class.  It worked on their GW-Basic and QB45 was backwards compatible, so I added what amounted to an "About" screen and here it is! 
+  [GAMES]               BlackJack.BAS/EXE (Blackjack!) - Can you beat Cardshark Jack? This is a program I wrote during senior year of HS for Computer Science class.  It worked on their GW-Basic and QB45 was backwards compatible, so I added what amounted to an "About" screen and here it is!
+                        Jim.BAS/EXE - (SuperJim!) - This was as much a test as it was a start to something.  I like how it came out and was really winging it while playing around with this "game" concept.   
+                        Pong.BAS/EXE - (VGA PONG) - A Pong clone is the "Hello World" of a game writing exercise... or maybe I made that up.  Press ~ at the menu for auto-play (CPU vs CPU).  Enjoy!
                         SF2093.BAS/EXE (Starfighter 2093) - Making a game in QB45 wasn't ideal, but cool visual demos and learning expeditions were all the rage for me.  It may be crap, but... no, it's crap.  Enjoy!
+  [GRAPHICS]            TAD.BAS/EXE - Tronix VGA Intro that I made.  It would cycle through the palette and scroll some text.  A perfect demo/intro for whatever lie next!                        
   [LOADCODE]            LCD.BAS/EXE (LoadCode v3.2) is a Binary File to Email-able Text Converter. File attachments are all the rage now, but back then, E-Mail wasn't so accommodating.  LCD_EXE.TXT is a converted version of LCD.EXE!
                         LCM.BAS/EXE - LoadComb was used when multiple LoadCode files needed to be combined before decoding them back into a binary file, making it LoadCode's companion tool and confidant!
   [MISCELLANEOUS]       DiceApp.BAS/EXE - A simple application for joining DICEnet, which spawned from The Flame Broiler BBS, which I ran.
